@@ -1,0 +1,18 @@
+/* Ajustes para celular e tablet (telas de toque)
+   1. Impede que o navegador aumente o texto sozinho.
+   2. No toque, o hover fica "preso" no card tocado. Aqui os efeitos
+      de zoom e deslocamento só valem para mouse.
+   3. Evita o zoom por toque duplo nos carrosséis e botões. */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+.track,.res-track,.tcard,.tcard-foot,.arr,.btn,.fq-b,.acc-btn{touch-action:manipulation}
+.track,.res-track{touch-action:pan-x pan-y pinch-zoom}
+button,a{-webkit-tap-highlight-color:transparent}
+@media (hover:none),(pointer:coarse){
+  .tcard:hover,.pcard:hover,.qcard:hover,.ba:hover,.path-card:hover,.checks li:hover,.btn:hover,.wa:hover{transform:none!important}
+  .tcard:hover,.pcard:hover,.qcard:hover,.path-card:hover{box-shadow:none}
+  .tcard:hover .tframe img,.jcard:hover img,.ba:hover .ba-one img,.ba:hover .ba-side img,.doc2:hover .doc2-img img,
+  .cphoto:hover img,.sframe:hover img,.day-media:hover img,.brow-media:hover img,.path-card:hover img{transform:none!important}
+  .tcard:hover .tframe img{filter:grayscale(1)}
+  .tcard:hover .num{color:var(--cream);-webkit-text-stroke-color:transparent}
+  .pcard:hover::after{opacity:0}
+}
