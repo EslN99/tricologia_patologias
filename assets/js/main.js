@@ -54,8 +54,9 @@
   function cards(tr){return Array.prototype.slice.call(tr.querySelectorAll('.card-s'));}
     /* posição de cada card dentro do trilho, independente do layout da página */
   function pos(tr,c){
-    var pad=parseFloat(getComputedStyle(tr).paddingLeft)||0;
-    return c.getBoundingClientRect().left-tr.getBoundingClientRect().left+tr.scrollLeft-pad;
+    var raw=c.getBoundingClientRect().left-tr.getBoundingClientRect().left+tr.scrollLeft;
+    if((getComputedStyle(c).scrollSnapAlign||'').indexOf('center')>-1) return raw-(tr.clientWidth-c.offsetWidth)/2;
+    return raw-(parseFloat(getComputedStyle(tr).paddingLeft)||0);
   }
   function nearest(tr){
     var best=0,d=1e9;

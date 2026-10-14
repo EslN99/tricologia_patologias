@@ -16,3 +16,11 @@ button,a{-webkit-tap-highlight-color:transparent}
   .tcard:hover .num{color:var(--cream);-webkit-text-stroke-color:transparent}
   .pcard:hover::after{opacity:0}
 }
+
+/* Carrosséis no celular: um card por vez, centralizado na tela */
+@media (max-width:767px){
+  .split{grid-template-columns:minmax(0,1fr)}
+  .split>*{min-width:0}
+  .track{--cw:min(84vw,340px);padding-left:calc((100vw - var(--cw))/2);padding-right:calc((100vw - var(--cw))/2);scroll-padding-inline:0}
+  .card-s{flex:0 0 var(--cw);width:var(--cw);max-width:var(--cw);scroll-snap-align:center}
+}
