@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Depois de definir o domínio, apague o # da linha abaixo e troque o endereço:
+# Sitemap: https://SEUDOMINIO.com.br/sitemap.xml
